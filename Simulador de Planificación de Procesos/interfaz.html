@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Planificación de Procesos</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1><center>Simulador de Planificación de Procesos</center></h1>
+        
+        <div class="input-section">
+            <h2><center>Ingreso de Procesos</center></h2>
+            <div class="input-methods">
+                <button id="manual-btn">Ingreso Manual</button>
+                <button id="file-btn">Cargar desde Archivo</button>
+                <button id="random-btn">Generar Aleatorio</button>
+            </div>
+            
+            <div id="manual-input" class="input-area">
+                <table id="process-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>T. Llegada</th>
+                            <th>T. Ráfaga</th>
+                            <th>Prioridad</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="processes-tbody">
+                        <!-- Procesos se agregarán aquí -->
+                    </tbody>
+                </table>
+                <button id="add-process">Agregar Proceso</button>
+            </div>
+        </div>
+        
+        <div class="algorithm-section">
+            <h2><center>Configuración de Algoritmo</center></h2>
+            <select id="algorithm-select">
+                <option value="fcfs">FCFS (First Come First Served)</option>
+                <option value="sjf">SJF (Shortest Job First)</option>
+                <option value="rr">Round Robin</option>
+            </select>
+            
+            <div id="quantum-container" class="hidden">
+                <label for="quantum">Quantum:</label>
+                <input type="number" id="quantum" min="1" value="2">
+            </div>
+            
+            <button id="simulate-btn">Ejecutar Simulación</button>
+        </div>
+        
+        <div class="results-section">
+            <h2><center>Resultados</center></h2>
+            <div id="gantt-chart" class="gantt-container">
+                <!-- Diagrama de Gantt se generará aquí -->
+            </div>
+            
+            <div id="metrics-table">
+                <!-- Tabla de métricas se generará aquí -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="clases.js"></script>
+</body>
+</html>
